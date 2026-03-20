@@ -1,0 +1,76 @@
+[
+  {
+    "_id": "ELEC001",
+    "category": "Electronics",
+    "name": "Wireless Noise-Cancelling Headphones",
+    "brand": "SoundMax",
+    "price": 24999,
+    "stock_quantity": 150,
+    "specifications": {
+      "bluetooth_version": "5.2",
+      "battery_life_hours": 30,
+      "noise_cancellation": "Active",
+      "voltage": "5V",
+      "warranty_years": 2,
+      "weight_grams": 280
+    },
+    "features": ["Active Noise Cancellation", "Voice Assistant", "Foldable Design", "USB-C Charging"],
+    "reviews": [
+      {"user": "Rajesh_K", "rating": 5, "comment": "Excellent sound quality and comfort"},
+      {"user": "Priya_M", "rating": 4, "comment": "Great headphones, slightly heavy"}
+    ],
+    "seller": {"id": "SEL001", "name": "TechStore India", "rating": 4.7}
+  },
+  {
+    "_id": "CLTH001",
+    "category": "Clothing",
+    "name": "Men's Cotton Formal Shirt",
+    "brand": "UrbanThreads",
+    "price": 1499,
+    "stock_quantity": 500,
+    "specifications": {
+      "material": "100% Cotton",
+      "fit": "Slim Fit",
+      "sleeve_length": "Full Sleeve",
+      "collar_type": "Spread Collar",
+      "care_instructions": "Machine wash cold, tumble dry low"
+    },
+    "sizes_available": ["S", "M", "L", "XL", "XXL"],
+    "colors_available": ["White", "Light Blue", "Navy", "Black"],
+    "reviews": [
+      {"user": "Amit_S", "rating": 5, "comment": "Perfect fit and great quality"},
+      {"user": "Vikram_P", "rating": 4, "comment": "Good value for money"}
+    ],
+    "seller": {"id": "SEL002", "name": "Fashion Hub", "rating": 4.5}
+  },
+  {
+    "_id": "GROC001",
+    "category": "Groceries",
+    "name": "Organic Brown Rice",
+    "brand": "NatureHarvest",
+    "price": 180,
+    "stock_quantity": 2000,
+    "specifications": {
+      "grain_type": "Long Grain",
+      "processing": "Organic",
+      "origin": "West Bengal, India",
+      "packaging": "1 kg pouch"
+    },
+    "nutritional_info": {
+      "calories_per_100g": 350,
+      "protein_g": 7.5,
+      "carbohydrates_g": 76,
+      "fat_g": 2.5,
+      "fiber_g": 3.2,
+      "vitamins": ["B1", "B3", "B6"],
+      "minerals": ["Magnesium", "Selenium", "Manganese"]
+    },
+    "expiry_date": "2025-08-15",
+    "batch_number": "BH2025A1234",
+    "certifications": ["India Organic", "FSSAI Approved"],
+    "reviews": [
+      {"user": "Sneha_R", "rating": 5, "comment": "Fresh and great quality rice"}
+    ],
+    "seller": {"id": "SEL003", "name": "Green Basket", "rating": 4.8}
+  }
+]
