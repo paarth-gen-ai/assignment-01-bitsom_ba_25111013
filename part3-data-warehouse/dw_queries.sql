@@ -7,7 +7,7 @@
 SELECT
     d.Year,
     d.Month,
-    m.MonthName,
+    d.MonthName,
     t.TreatmentName,
     t.Category AS ProductCategory,
     SUM(f.TotalAmount) AS TotalRevenue,
@@ -15,7 +15,7 @@ SELECT
 FROM Fact_MedicalTransactions f
 JOIN Dim_Date d ON f.DateKey = d.DateKey
 JOIN Dim_Treatment t ON f.TreatmentKey = t.TreatmentKey
-GROUP BY d.Year, d.Month, m.MonthName, t.TreatmentName, t.Category
+GROUP BY d.Year, d.Month, d.MonthName, t.TreatmentName, t.Category
 ORDER BY d.Year, d.Month, TotalRevenue DESC;
 
 -- Q2: Top 2 performing stores (doctors) by total revenue
@@ -37,7 +37,7 @@ LIMIT 2;
 SELECT
     d.Year,
     d.Month,
-    m.MonthName,
+    d.MonthName,
     SUM(f.TotalAmount) AS MonthlyRevenue,
     LAG(SUM(f.TotalAmount)) OVER (ORDER BY d.Year, d.Month) AS PreviousMonthRevenue,
     ROUND(
@@ -47,5 +47,5 @@ SELECT
     ) AS MoMGrowthPercent
 FROM Fact_MedicalTransactions f
 JOIN Dim_Date d ON f.DateKey = d.DateKey
-GROUP BY d.Year, d.Month, m.MonthName
+GROUP BY d.Year, d.Month, d.MonthName
 ORDER BY d.Year, d.Month;
