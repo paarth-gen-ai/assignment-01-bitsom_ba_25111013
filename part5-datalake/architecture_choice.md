@@ -1,0 +1,12 @@
+## Architecture Recommendation
+
+For a food delivery startup processing both structured transaction data and unstructured image/text data, I strongly recommend a Data Lakehouse architecture. A Data Lakehouse combines the best characteristics of Data Lakes (cost-efficient storage of raw, unstructured data) with the structured querying capabilities and ACID transactions of Data Warehouses, delivered through a unified storage layer typically built on open-source formats like Apache Iceberg or Delta Lake.
+
+**Reason 1: Schema-on-Read Flexibility for Diverse Data Types**
+A food delivery platform ingests highly heterogeneous data: structured order transactions and delivery timestamps, semi-structured JSON from mobile app events, unstructured customer support chat logs, and image data from restaurant photos or delivery proof. A Data Lakehouse natively supports all these formats in a single storage layer without requiring expensive upfront schema definition. The schema-on-read paradigm means new data sources like GPS tracking streams or voice order inputs can be incorporated instantly without redesigning the entire data pipeline, giving the startup agility to experiment with new features.
+
+**Reason 2: Cost-Efficiency at Scale**
+Food delivery generates massive volumes of data from millions of daily orders across hundreds of cities. A traditional data warehouse approach would require expensive compute and storage licenses that scale linearly with data volume. A Data Lakehouse stores all raw data in cheap object storage (like S3 or GCS) while maintaining query performance through intelligent indexing and caching layers. This architecture can handle petabytes of data at a fraction of the cost of a pure data warehouse solution, which is critical for a startup optimizing its burn rate.
+
+**Reason 3: Unified Platform for BI and ML Workloads**
+A food delivery startup needs both business intelligence (delivery time analytics, restaurant performance dashboards, driver utilization reports) and machine learning (ETA prediction, demand forecasting, fraud detection, personalized recommendations). A Data Lakehouse serves both workloads from the same data layer. BI tools like Tableau or Power BI can connect directly for reporting, while data scientists can access the same underlying data for model training using Spark or other ML frameworks. This eliminates the costly and error-prone process of maintaining separate data pipelines for analytics and machine learning.
